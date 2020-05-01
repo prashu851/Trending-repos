@@ -20,28 +20,29 @@ export class RepoComponent {
   constructor(
     private httpClient: HttpClient
   ) {}
-  filterLangRepos(abcd){
+  filterLangRepos(selectedLanguage){
     let newRepos = [];
     this.resp.forEach(element => {
-      if (element.language === abcd) {
+      if (element.language === selectedLanguage) {
         newRepos.push(element);
       }
     });
     this.repos = newRepos;
-    console.log(abcd);
   }
   getMobiles() {
     this.httpClient.get("https://github-trending-api.now.sh/repositories?since=daily")
     .subscribe((resp: [Repo]) => {
       this.resp = resp;
       this.repos = resp;
-      let languages = [];
-      resp.forEach(element => {
-        if (element.language != undefined) {
-          languages.push(element.language);
-        }
-      });
-      this.languages = uniq(languages);
+      const filterFunc = function(x) {
+        return x.language != undefined;
+      }
+      const filteredResp = resp.filter(filterFunc);
+
+      const temp = function(x) {
+        return x.language;
+      };
+      this.languages = uniq(filteredResp.map(temp));
       
     })
   }
