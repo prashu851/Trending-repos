@@ -13,6 +13,7 @@ import { uniq } from 'lodash'
 @Injectable()
 export class RepoComponent {
   title = 'Trending Repos';
+  resp=[];
   repos=[];
   languages=[];
   displayedColumns: string[] = ['name', 'author', 'description'];
@@ -20,11 +21,19 @@ export class RepoComponent {
     private httpClient: HttpClient
   ) {}
   filterLangRepos(abcd){
+    let newRepos = [];
+    this.resp.forEach(element => {
+      if (element.language === abcd) {
+        newRepos.push(element);
+      }
+    });
+    this.repos = newRepos;
     console.log(abcd);
   }
   getMobiles() {
     this.httpClient.get("https://github-trending-api.now.sh/repositories?since=daily")
     .subscribe((resp: [Repo]) => {
+      this.resp = resp;
       this.repos = resp;
       let languages = [];
       resp.forEach(element => {
@@ -33,8 +42,6 @@ export class RepoComponent {
         }
       });
       this.languages = uniq(languages);
-      console.log(resp);
-      console.log(this.languages);
       
     })
   }
