@@ -34,16 +34,17 @@ export class RepoComponent {
     .subscribe((resp: [Repo]) => {
       this.resp = resp;
       this.repos = resp;
-      const filterFunc = function(x) {
+
+      const filterUndefined = function(x) {
         return x.language != undefined;
       }
-      const filteredResp = resp.filter(filterFunc);
 
-      const temp = function(x) {
+      const mapToLanguage = function(x) {
         return x.language;
       };
-      this.languages = uniq(filteredResp.map(temp));
-      
+
+      this.languages = uniq(resp.filter(filterUndefined).map(mapToLanguage));
+    
     })
   }
 }
