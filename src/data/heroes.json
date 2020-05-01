@@ -1,0 +1,8 @@
+{
+    "heroes": [
+        {"id":1, "name": "Sumanth"}, {"id":2, "name": "Prashanth"}
+    ],
+    "mobiles": [
+        {"name":"Samsung","price":"Rs.9999"},{"name":"Realme","price":"Rs.10,999"},{"name":"moto","price":"Rs.8,999"}
+    ]
+}

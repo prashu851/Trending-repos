@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+<div class="center">
+  <h1 align="center">{{title}}</h1>
+</div><br>
+<div class="container">
+  <div class="bcenter">
+<button class="button" (click)="getMobiles()">Repos</button><br>
+</div>
+</div>
+<br>
+
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor='let language of languages' (click)="filterLangRepos(language)">{{language}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<table style="width:73%" align="center">
+  <tr *ngFor='let repo of repos'>
+    <td><h2>{{repo.author}}/{{repo.name}}</h2>
+        <h4>{{repo.description}}</h4>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
