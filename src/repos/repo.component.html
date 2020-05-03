@@ -10,13 +10,13 @@
 </div>
 </div>
 <br>
-
 <mat-form-field>
-  <mat-label>Languages</mat-label>
-  <mat-select>
-    <mat-option *ngFor='let language of languages' (click)="filterLangRepos(language)">{{language}}</mat-option>
-  </mat-select>
+    <mat-label>Languages</mat-label>
+    <mat-select>
+      <mat-option *ngFor='let language of languages' (click)="filterLangRepos(language)">{{language}}</mat-option>
+    </mat-select>
 </mat-form-field>
+
 <table style="width:73%" align="center">
   <tr *ngFor='let repo of repos'>
     <td><h2>{{repo.author}}/{{repo.name}}</h2>

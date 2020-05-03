@@ -22,13 +22,16 @@ export class RepoComponent {
   ) {}
   filterLangRepos(selectedLanguage){
     let newRepos = [];
-    this.resp.forEach(element => {
-      if (element.language === selectedLanguage) {
-        newRepos.push(element);
-      }
-    });
-    this.repos = newRepos;
-  }
+    const filterLang = function(x){
+      return x.language === selectedLanguage;
+    }
+    const mapLang = function(x){
+      return x;
+    }
+    this.repos=this.resp.filter(filterLang).map(mapLang);
+  };
+  
+  
   getMobiles() {
     this.httpClient.get("https://github-trending-api.now.sh/repositories?since=daily")
     .subscribe((resp: [Repo]) => {
