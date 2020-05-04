@@ -69,3 +69,6 @@ h4{
   th, td {
     padding: 15px;
   }
+  img {
+    float: left;
+  }

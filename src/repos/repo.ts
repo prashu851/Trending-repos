@@ -3,6 +3,9 @@ export class Repo {
     public author: string,
     public name: string,
     public description: string,
-    public language: string
+    public language: string,
+    public avatar: string,
+    public stars: number,
+    public forks: number
     ){}
 } 
