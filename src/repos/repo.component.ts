@@ -30,8 +30,6 @@ export class RepoComponent {
     }
     this.repos=this.resp.filter(filterLang).map(mapLang);
   };
-  
-  
   getMobiles() {
     this.httpClient.get("https://github-trending-api.now.sh/repositories?since=daily")
     .subscribe((resp: [Repo]) => {
