@@ -25,11 +25,18 @@ export class RepoComponent {
     const filterLang = function(x){
       return x.language === selectedLanguage;
     }
-    const mapLang = function(x){
-      return x;
-    }
-    this.repos=this.resp.filter(filterLang).map(mapLang);
+
+    this.repos=this.resp.filter(filterLang);
   };
+  filterSearchRepos(userInput) {
+    const inputValue = userInput.target.value;
+    const filterSearchedInput = function(x) {
+      return x.description.toLowerCase().includes(inputValue.toLowerCase());
+    }
+
+    this.repos=this.resp.filter(filterSearchedInput);
+  }
+
   getMobiles() {
     this.httpClient.get("https://github-trending-api.now.sh/repositories?since=daily")
     .subscribe((resp: [Repo]) => {
