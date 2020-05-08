@@ -21,16 +21,16 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class = "input">
       <input matInput type="text" name="todo" placeholder="Enter a todo" (change)="filterSearchRepos($event)">
     </mat-form-field>
 
   </tr>
 
   <tr *ngFor='let repo of repos'>
-    <td><img src="{{repo.avatar}}" width="60" height="100"><h2>{{repo.author}}/{{repo.name}}</h2>
+    <td><img src="{{repo.avatar}}" width="70" height="100"><h2>{{repo.author}}/{{repo.name}}</h2>
         <h4>{{repo.description}}</h4>
-        <h5>Stars:{{repo.stars}} Forks:{{repo.forks}}</h5>
+        <h5><strong>Stars:</strong> {{repo.stars}} <strong>Forks:</strong> {{repo.forks}}</h5>
     </td>
   </tr>
 </table>

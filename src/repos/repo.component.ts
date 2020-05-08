@@ -1,9 +1,8 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Repo } from './repo';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { uniq } from 'lodash'
-
 
 @Component({
   selector: 'testing-root-place-3',
@@ -11,7 +10,8 @@ import { uniq } from 'lodash'
   styleUrls: ['./repo.component.css']
 })
 @Injectable()
-export class RepoComponent {
+export class RepoComponent{
+
   title = 'Trending Repos';
   resp=[];
   repos=[];
