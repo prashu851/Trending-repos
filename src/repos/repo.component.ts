@@ -11,6 +11,7 @@ import { uniq } from 'lodash'
 })
 @Injectable()
 export class RepoComponent{
+  
 
   title = 'Trending Repos';
   resp=[];

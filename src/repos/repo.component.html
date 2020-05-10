@@ -18,6 +18,7 @@
       <mat-label>Languages</mat-label>
       <mat-select>
         <mat-option *ngFor='let language of languages' (click)="filterLangRepos(language)">{{language}}</mat-option>
+        <mat-option (click)="getMobiles()">All</mat-option>
       </mat-select>
     </mat-form-field>
 
