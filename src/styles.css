@@ -14,31 +14,6 @@ h1 {
 h4{
   color:rgb(88, 76, 76);
 }
-  button {
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .button{
-      background-color: rgb(68, 58, 58);
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      margin: 4px 2px;
-      cursor: pointer;
-      margin: 0 auto;
-      
-    
-  }
   .center {
     padding:90px 0;
     background-color:rgb(68, 58, 58);

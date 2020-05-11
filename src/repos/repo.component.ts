@@ -11,13 +11,16 @@ import { uniq } from 'lodash'
 })
 @Injectable()
 export class RepoComponent{
-  
+  ngOnInit() {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.getMobiles();
+  }
 
   title = 'Trending Repos';
   resp=[];
   repos=[];
   languages=[];
-  displayedColumns: string[] = ['name', 'author', 'description'];
   constructor(
     private httpClient: HttpClient
   ) {}

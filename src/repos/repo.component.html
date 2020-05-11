@@ -4,11 +4,6 @@
 <div class="center">
   <h1 align="center">{{title}}</h1>
 </div><br>
-<div class="container">
-  <div class="bcenter">
-<button class="button" (click)="getMobiles()">Repos</button><br>
-</div>
-</div>
 <br>
   
 
@@ -23,7 +18,7 @@
     </mat-form-field>
 
     <mat-form-field class = "input">
-      <input matInput type="text" name="todo" placeholder="Enter a todo" (change)="filterSearchRepos($event)">
+      <input matInput type="text" name="todo" placeholder="Search" (change)="filterSearchRepos($event)">
     </mat-form-field>
 
   </tr>
